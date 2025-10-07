@@ -47,7 +47,7 @@ export function TourCard({ tour }: TourCardProps) {
           </div>
           <div className="flex items-center">
             <MapPin className="h-4 w-4 mr-2 text-blue-600" />
-            <span>Cebu, Philippines</span>
+            <span>{tour.location}</span>
           </div>
         </div>
 
@@ -67,9 +67,6 @@ export function TourCard({ tour }: TourCardProps) {
       </CardContent>
 
       <CardFooter className="flex gap-2">
-        <Link href={`/tours/${tour.id}`} className="flex-1">
-          <Button variant="outline" className="w-full">View Details</Button>
-        </Link>
         <Link href={`/tours/${tour.id}#book`} className="flex-1">
           <Button className="w-full bg-blue-600 hover:bg-blue-700">Book Now</Button>
         </Link>

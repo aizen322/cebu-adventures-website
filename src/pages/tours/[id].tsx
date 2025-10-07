@@ -118,7 +118,7 @@ export default function TourDetailPage() {
                       <MapPin className="h-5 w-5 mr-2 text-blue-600" />
                       <div>
                         <p className="text-sm text-gray-500">Location</p>
-                        <p className="font-semibold">Cebu</p>
+                        <p className="font-semibold">{tour.location}</p>
                       </div>
                     </div>
                   </div>

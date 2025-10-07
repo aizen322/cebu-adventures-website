@@ -14,23 +14,13 @@ export default function ToursPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   useEffect(() => {
-    const { category, date, groupSize } = router.query;
+    const { category, date } = router.query;
     
-    if (category || date || groupSize) {
+    if (category || date) {
       const filters: any = {};
       
       if (category && typeof category === "string") {
         filters.category = category;
-      }
-      
-      if (groupSize && typeof groupSize === "string") {
-        const sizeMap: { [key: string]: number } = {
-          "1-2": 2,
-          "3-5": 5,
-          "6-10": 10,
-          "10+": 15
-        };
-        filters.groupSize = sizeMap[groupSize] || 2;
       }
       
       handleFilterChange(filters);
@@ -47,7 +37,7 @@ export default function ToursPage() {
       setSelectedCategory("all");
     }
 
-    if (filters.duration) {
+    if (filters.duration && filters.duration !== "all") {
       const [min, max] = filters.duration.split("-").map(Number);
       filtered = filtered.filter(tour => tour.duration >= min && tour.duration <= max);
     }
@@ -55,10 +45,6 @@ export default function ToursPage() {
     if (filters.priceRange) {
       const [min, max] = filters.priceRange;
       filtered = filtered.filter(tour => tour.price >= min && tour.price <= max);
-    }
-
-    if (filters.groupSize) {
-      filtered = filtered.filter(tour => tour.groupSize.max >= filters.groupSize);
     }
 
     setFilteredTours(filtered);

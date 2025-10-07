@@ -2,28 +2,17 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon, Search } from "lucide-react";
-import { format } from "date-fns";
+import { Search } from "lucide-react";
 
 export function HeroSection() {
   const router = useRouter();
-  const [date, setDate] = useState<Date>();
   const [tourType, setTourType] = useState<string>("");
-  const [groupSize, setGroupSize] = useState<string>("");
 
   const handleSearch = () => {
     const params = new URLSearchParams();
     
     if (tourType) {
       params.append("category", tourType);
-    }
-    if (date) {
-      params.append("date", date.toISOString());
-    }
-    if (groupSize) {
-      params.append("groupSize", groupSize);
     }
 
     const queryString = params.toString();
@@ -50,7 +39,7 @@ export function HeroSection() {
         </p>
 
         <div className="bg-white rounded-lg shadow-2xl p-6 max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <Select value={tourType} onValueChange={setTourType}>
               <SelectTrigger>
                 <SelectValue placeholder="Tour Type" />
@@ -60,30 +49,6 @@ export function HeroSection() {
                 <SelectItem value="Adventure">Adventure Tours</SelectItem>
                 <SelectItem value="Cultural">Cultural Tours</SelectItem>
                 <SelectItem value="Food">Food Tours</SelectItem>
-              </SelectContent>
-            </Select>
-
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button variant="outline" className="w-full justify-start text-left font-normal">
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {date ? format(date, "PPP") : "Select Date"}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
-                <Calendar mode="single" selected={date} onSelect={setDate} initialFocus />
-              </PopoverContent>
-            </Popover>
-
-            <Select value={groupSize} onValueChange={setGroupSize}>
-              <SelectTrigger>
-                <SelectValue placeholder="Group Size" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="1-2">1-2 People</SelectItem>
-                <SelectItem value="3-5">3-5 People</SelectItem>
-                <SelectItem value="6-10">6-10 People</SelectItem>
-                <SelectItem value="10+">10+ People</SelectItem>
               </SelectContent>
             </Select>
 

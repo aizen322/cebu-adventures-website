@@ -9,6 +9,7 @@ export const featuredTours: Tour[] = [
     shortDescription: "3 days of paradise across Cebu's best beaches",
     price: 4250,
     duration: 3,
+    location: "Mactan, Moalboal",
     groupSize: { min: 2, max: 15 },
     images: [
       "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=800&fit=crop",
@@ -46,6 +47,7 @@ export const featuredTours: Tour[] = [
     shortDescription: "Discover Cebu's rich Spanish colonial heritage",
     price: 3500,
     duration: 1,
+    location: "Cebu City",
     groupSize: { min: 4, max: 20 },
     images: [
       "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&h=800&fit=crop",
@@ -78,6 +80,7 @@ export const featuredTours: Tour[] = [
     shortDescription: "Extreme adventure for thrill-seekers",
     price: 4800,
     duration: 1,
+    location: "Badian",
     groupSize: { min: 2, max: 12 },
     images: [
       "https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=1200&h=800&fit=crop",
@@ -110,6 +113,7 @@ export const featuredTours: Tour[] = [
     shortDescription: "A gastronomic journey through Cebuano cuisine",
     price: 2800,
     duration: 1,
+    location: "Cebu City",
     groupSize: { min: 4, max: 15 },
     images: [
       "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&h=800&fit=crop",
@@ -146,6 +150,7 @@ export const allTours: Tour[] = [
     shortDescription: "Swim with whale sharks in Oslob",
     price: 5500,
     duration: 1,
+    location: "Oslob",
     groupSize: { min: 1, max: 10 },
     images: [
       "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=800&fit=crop",
@@ -171,6 +176,7 @@ export const allTours: Tour[] = [
     shortDescription: "Cool mountain retreat with scenic views",
     price: 3200,
     duration: 1,
+    location: "Cebu Highlands",
     groupSize: { min: 2, max: 15 },
     images: [
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop",
@@ -196,6 +202,7 @@ export const allTours: Tour[] = [
     shortDescription: "Explore Bohol's wonders in one day",
     price: 6800,
     duration: 1,
+    location: "Bohol",
     groupSize: { min: 4, max: 20 },
     images: [
       "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=1200&h=800&fit=crop",
@@ -221,6 +228,7 @@ export const allTours: Tour[] = [
     shortDescription: "Authentic street food adventure",
     price: 1800,
     duration: 1,
+    location: "Cebu City",
     groupSize: { min: 2, max: 8 },
     images: [
       "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&h=800&fit=crop",
@@ -246,6 +254,7 @@ export const allTours: Tour[] = [
     shortDescription: "Hidden island paradise getaway",
     price: 12500,
     duration: 2,
+    location: "Camotes Islands",
     groupSize: { min: 2, max: 12 },
     images: [
       "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=800&fit=crop",
@@ -309,23 +318,9 @@ export const vehicles: Vehicle[] = [
     capacity: 15,
     transmission: "Manual",
     fuelType: "Diesel",
-    withDriver: true,
+    withDriver: false,
     luggage: 10,
     features: ["Dual Air Conditioning", "Spacious Interior", "Sliding Doors"],
-    available: true,
-  },
-  {
-    id: "mitsubishi-mirage",
-    name: "Mitsubishi Mirage",
-    type: "Sedan",
-    image: "https://images.unsplash.com/photo-1617469767050-14e269a25526?w=800&h=600&fit=crop",
-    pricePerDay: 1800,
-    capacity: 5,
-    transmission: "Automatic",
-    fuelType: "Gasoline",
-    withDriver: false,
-    luggage: 2,
-    features: ["Fuel Efficient", "Air Conditioning", "Compact Size"],
     available: true,
   },
 ];

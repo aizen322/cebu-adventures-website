@@ -6,6 +6,7 @@ export interface Tour {
   shortDescription: string;
   price: number;
   duration: number;
+  location: string;
   groupSize: {
     min: number;
     max: number;

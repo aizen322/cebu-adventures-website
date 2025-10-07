@@ -45,7 +45,7 @@ export function FeaturedTours() {
                   </div>
                   <div className="flex items-center">
                     <MapPin className="h-4 w-4 mr-2" />
-                    <span>Cebu, Philippines</span>
+                    <span>{tour.location}</span>
                   </div>
                 </div>
                 <div className="mt-4">

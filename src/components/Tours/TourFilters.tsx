@@ -15,14 +15,12 @@ export function TourFilters({ onFilterChange }: TourFiltersProps) {
   const [category, setCategory] = useState<string>("all");
   const [duration, setDuration] = useState<string>("");
   const [priceRange, setPriceRange] = useState<number[]>([0, 15000]);
-  const [groupSize, setGroupSize] = useState<number>(1);
 
   const applyFilters = () => {
     onFilterChange({
       category,
       duration,
-      priceRange,
-      groupSize
+      priceRange
     });
   };
 
@@ -30,12 +28,10 @@ export function TourFilters({ onFilterChange }: TourFiltersProps) {
     setCategory("all");
     setDuration("");
     setPriceRange([0, 15000]);
-    setGroupSize(1);
     onFilterChange({
       category: "all",
       duration: "",
-      priceRange: [0, 15000],
-      groupSize: 1
+      priceRange: [0, 15000]
     });
   };
 
@@ -99,24 +95,6 @@ export function TourFilters({ onFilterChange }: TourFiltersProps) {
             step={500}
             className="mt-2"
           />
-        </div>
-
-        <div>
-          <Label htmlFor="groupSize" className="text-base font-semibold mb-3 block">
-            Minimum Group Size
-          </Label>
-          <Select value={groupSize.toString()} onValueChange={(val) => setGroupSize(Number(val))}>
-            <SelectTrigger id="groupSize">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="1">1+ People</SelectItem>
-              <SelectItem value="2">2+ People</SelectItem>
-              <SelectItem value="4">4+ People</SelectItem>
-              <SelectItem value="6">6+ People</SelectItem>
-              <SelectItem value="10">10+ People</SelectItem>
-            </SelectContent>
-          </Select>
         </div>
 
         <div className="space-y-2 pt-4">
