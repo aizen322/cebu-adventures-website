@@ -7,7 +7,7 @@ export const featuredTours: Tour[] = [
     category: "Beach",
     description: "Experience the pristine beaches and crystal-clear waters of Cebu with our exclusive 3-day beach getaway.",
     shortDescription: "3 days of paradise across Cebu's best beaches",
-    price: 8500,
+    price: 4250,
     duration: 3,
     groupSize: { min: 2, max: 15 },
     images: [

@@ -31,7 +31,7 @@ export function FeaturedTours() {
               </div>
               <CardHeader>
                 <CardTitle className="text-xl">{tour.title}</CardTitle>
-                <CardDescription>{tour.shortDescription}</CardDescription>
+                <CardDescription className="min-h-[48px]">{tour.shortDescription}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2 text-sm text-gray-600">
@@ -54,7 +54,7 @@ export function FeaturedTours() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Link href="/tours" className="w-full">
+                <Link href={`/tours/${tour.id}`} className="w-full">
                   <Button className="w-full bg-blue-600 hover:bg-blue-700">Book Now</Button>
                 </Link>
               </CardFooter>
